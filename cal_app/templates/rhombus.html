@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+   
+<div class="row">
+    <div class="col-4">
+        <h2>Ромб</h2>
+        <img src="{% static 'img/rhombus.png'%}" alt="">
+
+
+        <form method="POST" class="col">
+	    {% csrf_token %}
+	    Сторона a {{form.a}}
+        Высота h {{form.b}}
+    	<input type="submit" value = "Вычислить" class="btn btn-primary qwe"> 
+        </form>
+        {{ form.a.errors}} 
+        {{ form.b.errors}} 
+        {% if  rhombus.a %}
+        <div class="wrap">
+            <p>Площадь = {{rhombus.area}}</p>
+            <p>Периметр = {{rhombus.perimeter}}</p>
+        </div>
+       
+</div>
+
+<div class="col-8">
+    <img src="data:image/png;base64,{{uri}}" alt="" id="img" >
+    <p> Сторона a = {{rhombus.a}}</p>
+    <p> Высота h = {{rhombus.b}}</p>
+    {% endif %}
+</div>
+</div>
+{% endblock%}

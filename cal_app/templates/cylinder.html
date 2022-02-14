@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+   
+<div class="row">
+    <div class="col-4">
+        <h2>Цилиндер</h2>
+        <img src="{% static 'img/cylinder.png'%}" alt="">
+
+        <form method="POST" class="col">
+	    {% csrf_token %}
+	    Радиус r {{form.a}}
+        Высота h {{form.b}}
+    	<input type="submit" value = "Вычислить" class="btn btn-primary qwe"> 
+        </form>
+        {{ form.a.errors}} 
+        {{ form.b.errors}} 
+        {% if  cylinder.a %}
+        <div class="wrap">
+          
+            <p>Площадь = {{cylinder.area}}</p>
+            <p>Объем = {{cylinder.volume}}</p>
+            <p>Окружность основания = {{cylinder.perimeter}}</p>
+        </div>
+   
+</div>
+<div class="col-8">
+    <img src="data:image/png;base64,{{uri}}" alt="" id="img" >
+    <p>Радиус r= {{cylinder.a}}</p>
+    <p>Высота h  = {{cylinder.b}}</p>
+    {% endif %}
+</div>
+</div>
+{% endblock%}

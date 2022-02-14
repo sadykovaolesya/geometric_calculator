@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+<style>
+    #square {
+        width: {{px}}px;
+        height: {{px}}px;
+        outline: 1px solid #000; 
+    }
+</style>
+{% endblock css %}
+{% block content %}
+   
+<div class="row">
+  
+    <div class="col-4">
+        <h2>Конус</h2>
+        <img src="{% static 'img/cone.png'%}" alt="">
+        <form method="POST" class="col">
+	    {% csrf_token %}
+	    Радиус  {{form.a}}
+        Высота {{form.b}}
+    	<input type="submit" value = "Вычислить" class="btn btn-primary qwe"> 
+        </form>
+        {{ form.a.errors}} 
+        {{ form.b.errors}} 
+        {% if  cylinder.a %}
+        <div class="wrap">
+            
+            <p>Площадь = {{cone.area}}</p>
+            <p>Объем = {{cone.volume}}</p>
+            <p>Апофема = {{cone.apothem}}</p>
+        </div>
+      
+</div>
+<div class="col-8">
+    <img src="data:image/png;base64,{{uri}}" alt="" id="img" >
+    <p> Радиус  {{cone.a}} </p>
+    <p> Высота {{cone.b}}</p>
+
+    {% endif %}
+</div>
+</div>
+{% endblock%}

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+   
+<div class="row">
+    <div class="col-4">
+        <h2>Квадрат</h2>    
+       
+        <img src="{% static 'img/square.png'%}" alt="">
+
+        <form method="POST" class="col"> 
+	    {% csrf_token %}
+	    Сторона a {{form.a}}
+    	<input type="submit" value = "Вычислить" class="btn btn-primary qwe"> 
+    </form>
+    {{ form.a.errors}}     
+  
+        {% if  square.a %}
+       
+        <div class="wrap">
+            
+            
+            <p>Площадь = {{square.area}}</p>
+            <p>Периметр = {{square.perimeter}}</p>
+            <p>Диагональ = {{square.diagonal}}</p>
+        </div>
+      
+</div>
+<div class="col-8">
+    <img src="data:image/png;base64,{{uri}}" alt="" id="img" >
+    <p>Сторона a = {{square.a}}</p>
+    {% endif %}
+</div>
+</div>
+{% endblock%}

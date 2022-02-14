@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+   
+<div class="row">
+    <div class="col-4">
+        <h2>Треугольник</h2>
+        <img src="{% static 'img/triangle.png'%}" alt="">
+
+        <form method="POST" class="col">
+	    {% csrf_token %}
+	    Сторона a {{form.a}}
+        Сторона b {{form.b}}
+        Сторона c {{form.c}}
+    	<input type="submit" value = "Вычислить" class="btn btn-primary qwe"> 
+        </form>
+        {{ form.a.errors}} 
+       
+        {% if  triangle.a %}
+        <div class="wrap">
+         
+            <p>Площадь = {{triangle.area}}</p>
+            <p>Периметр = {{triangle.perimeter}}</p>
+            <p>Высота С = {{triangle.height}}</p>
+        </div>
+        
+</div>
+<div class="col-8">
+    <img src="data:image/png;base64,{{uri}}" alt="" id="img" >
+    <p> Сторона a = {{triangle.a}}</p>
+    <p> Сторона b = {{triangle.b}}</p>
+    <p> Сторона c = {{triangle.c}}</p>
+
+    {% endif %}
+</div>
+</div>
+{% endblock%}

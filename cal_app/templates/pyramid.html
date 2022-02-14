@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+   
+<div class="row">
+    <div class="col-4">
+    <h2>Пирамида</h2>
+    
+       
+    <img src="{% static 'img/pyramid.png'%}" alt="">
+
+        <form method="POST" class="col">
+	    {% csrf_token %}
+	    Старана a {{form.a}}
+        Число сторон  {{form.b}}
+        Высота {{form.c}}
+    	<input type="submit" value = "Вычислить" class="btn btn-primary qwe"> 
+        </form>
+        {{ form.a.errors}}
+        {{ form.b.errors}} 
+        {{ form.c.errors}}
+        {% if pyramid.a %}
+        <div class="wrap">
+         
+            <p>Площадь = {{pyramid.area}}</p>
+            <p>Объем = {{pyramid.volume}}</p>
+            <p>Апофема = {{pyramid.apothem}}</p>
+            
+
+
+        </div>
+      
+</div>
+<div class="col-8">
+    <img src="data:image/png;base64,{{uri}}" alt="" id="img" >
+    <p> Старана a  = {{pyramid.a}}</p>
+    <p>Число сторон   = {{pyramid.b}}</p>
+    <p> Высота  = {{pyramid.c}}</p>
+   
+    {% endif %}
+</div>
+
+</div>
+{% endblock%}

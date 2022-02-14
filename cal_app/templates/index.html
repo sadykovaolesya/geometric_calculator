@@ -1,0 +1,152 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+          <div class="row">
+                <div class="col-8">
+                    <h2>Плоские фигуры</h2>
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="figure-wrap">
+                                <div class="figure-img">
+                                    <a href={% url 'calculator:square' %}> <img src="{% static 'img/square.png'%}" alt=""> </a>
+                                </div>
+                                <div class="figure-title">
+                                    <a href={% url 'calculator:square' %}> Квадрат </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="figure-wrap">
+                                <div class="figure-img">
+                                    <a href="{% url 'calculator:rectangle' %}"><img src="{% static 'img/rectangle.png'%}" alt=""></a>
+                                </div>
+                                <div class="figure-title">
+                                    <a href="{% url 'calculator:rectangle' %}">Прямоугольник</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="figure-wrap">
+                                <div class="figure-img">
+                                    <a href="{% url 'calculator:circle' %}"><img src="{% static 'img/circle.png'%}" alt=""></a>
+                                </div>
+                                <div class="figure-title">
+                                    <a href="{% url 'calculator:circle' %}">Круг</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-4">
+                            <div class="figure-wrap">
+                                <div class="figure-img">
+                                    <a href="{% url 'calculator:rhombus' %}"><img src="{% static 'img/rhombus.png'%}" alt=""></a>
+                                </div>
+                                <div class="figure-title">
+                                    <a href="{% url 'calculator:rhombus' %}">Ромб</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-4">
+                            <div class="figure-wrap">
+                                <div class="figure-img">
+                                    <a href="{% url 'calculator:triangle' %}"> <img src="{% static 'img/triangle.png'%}" alt=""></a>
+                                </div>
+                                <div class="figure-title">
+                                    <a href="{% url 'calculator:triangle' %}">Треугольник</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-4">
+                            <div class="figure-wrap">
+                                <div class="figure-img">
+                                    <a href="{% url 'calculator:trapezoid' %}"> <img src="{% static 'img/trapezoid.png'%}" alt=""></a>
+                                </div>
+                                <div class="figure-title">
+                                    <a href="{% url 'calculator:trapezoid' %}">Трапеция</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+            
+                    </div>
+                </div>
+          </div>
+
+          <div class="row">
+            <div class="col-8">
+                <h2>Объемные фигуры</h2>
+                <div class="row">
+                    
+                    <div class="col-4">
+                        <div class="figure-wrap">
+                            <div class="figure-img">
+                                <a href="{% url 'calculator:cube' %}"> <img src="{% static 'img/cube.png'%}" alt=""> </a>
+                            </div>
+                            <div class="figure-title">
+                                <a href="{% url 'calculator:cube' %}">Куб</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-4">
+                        <div class="figure-wrap">
+                            <div class="figure-img">
+                                <a href="{% url 'calculator:sphere' %}">  <img src="{% static 'img/sphere.png'%}" alt=""> </a>
+                            </div>
+                            <div class="figure-title">
+                                <a href="{% url 'calculator:sphere' %}">Сфера</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-4">
+                        <div class="figure-wrap">
+                            <div class="figure-img">
+                                <a href="{% url 'calculator:cylinder' %}">  <img src="{% static 'img/cylinder.png'%}" alt=""> </a>
+                            </div>
+                            <div class="figure-title">
+                                <a href="{% url 'calculator:cylinder' %}"> Цилиндер</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-4">
+                        <div class="figure-wrap">
+                            <div class="figure-img">
+                                <a href="{% url 'calculator:parallelepiped' %}">  <img src="{% static 'img/parallelepiped.png'%}" alt=""> </a>
+                            </div>
+                            <div class="figure-title">
+                                <a href="{% url 'calculator:parallelepiped' %}"> Параллелепипед</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-4">
+                        <div class="figure-wrap">
+                            <div class="figure-img">
+                                <a href="{% url 'calculator:pyramid' %}"> <img src="{% static 'img/pyramid.png'%}" alt=""></a>
+                            </div>
+                            <div class="figure-title">
+                                <a href="{% url 'calculator:pyramid' %}">Пирамида</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="figure-wrap">
+                            <div class="figure-img">
+                                <a href="{% url 'calculator:cone' %}"> <img src="{% static 'img/cone.png'%}" alt=""> </a>
+                            </div>
+                            <div class="figure-title">
+                                <a href="{% url 'calculator:cone' %}">Конус</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+      </div>
+
+{% endblock %}  

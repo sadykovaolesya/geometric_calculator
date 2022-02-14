@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+   
+<div class="row">
+    <div class="col-4">
+        <h2>Куб</h2>
+        <img src="{% static 'img/cube.png'%}" alt="">
+
+        <form method="POST" class="col">
+	    {% csrf_token %}
+	    Ребро a {{form.a}}
+    	<input type="submit" value = "Вычислить" class="btn btn-primary qwe"> 
+        </form>
+        {{ form.a.errors}} 
+        {% if  cube.a %}
+        <div class="wrap">
+            
+            <p>Площадь = {{cube.area}}</p>
+            <p>Объем = {{cube.volume}}</p>
+            <p>Периметр = {{cube.perimeter}}</p>
+        </div>
+        
+</div>
+<div class="col-8">
+    <img src="data:image/png;base64,{{uri}}" alt="" id="img" >
+    <p>Ребро a  = {{cube.a}}</p>
+    {% endif %}
+</div>
+</div>
+{% endblock%}

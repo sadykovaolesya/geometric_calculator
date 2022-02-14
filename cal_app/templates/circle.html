@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+   
+<div class="row">
+   
+    <div class="col-4">
+        <h2>Круг</h2>
+        <img src="{% static 'img/circle.png'%}" alt="">
+        <form method="POST" class="col">
+	    {% csrf_token %}
+	    Радиус r {{form.a}}
+    	<input type="submit" value = "Вычислить" class="btn btn-primary qwe"> 
+        </form>
+        {{ form.a.errors}} 
+        {% if  circle.a %}
+        <div class="wrap">
+            
+            <p>Площадь = {{circle.area}}</p>
+            <p>Периметр = {{circle.perimeter}}</p>
+        </div>
+      
+</div>
+<div class="col-8">
+    <img src="data:image/png;base64,{{uri}}" alt="" id="img" >
+    <p>Радиус r = {{circle.a}}</p>
+    {% endif %}
+</div>
+</div>
+{% endblock%}

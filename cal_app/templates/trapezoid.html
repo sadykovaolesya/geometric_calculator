@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+   
+<div class="row">
+    <div class="col-4">
+        <h2>Трапеция</h2>
+       
+        <img src="{% static 'img/trapezoid.png'%}" alt="">
+
+        <form method="POST" class="col">
+	    {% csrf_token %}
+	    Сторона a {{form.a}}
+        Сторона b {{form.b}}
+        Сторона c {{form.c}}
+        Сторона d {{form.d}}
+       
+    	<input type="submit" value = "Вычислить" class="btn btn-primary qwe"> 
+        </form>
+        {{ form.a.errors}} 
+        {% if  trapezoid.a %}
+        <div class="wrap">
+            
+           
+            <p>Площадь = {{trapezoid.area}}</p>
+            <p>Периметр = {{trapezoid.perimeter}}</p>
+            <p>Высота = {{trapezoid.height}}</p>
+            <p>Средняя линия = {{trapezoid.middle_line}}</p>
+
+        </div>
+       
+</div>
+<div class="col-8">
+    <img src="data:image/png;base64,{{uri}}" alt="" id="img" >
+    <p > Сторона a = {{trapezoid.a}}</p>
+    <p > Сторона b = {{trapezoid.b}}</p>
+    <p > Сторона c = {{trapezoid.c}}</p>
+    <p >Сторона d = {{trapezoid.d}}</p>
+
+    {% endif %}
+</div>
+</div>
+{% endblock%}

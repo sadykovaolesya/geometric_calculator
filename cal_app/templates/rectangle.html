@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+   
+<div class="row">
+    <div class="col-4">
+        <h2>Прямоугольник</h2>
+        <img src="{% static 'img/rectangle.png'%}" alt="">
+        <form method="POST" class="col">
+	    {% csrf_token %}
+	    Сторона a {{form.a}}
+        Сторона b {{form.b}}
+    	<input type="submit" value = "Вычислить" class="btn btn-primary qwe"> 
+        </form>
+        {{ form.a.errors}} 
+        {{ form.b.errors}} 
+
+        {% if  rectangle.a %}
+        <div class="wrap">
+          
+            <p>Площадь = {{rectangle.area}}</p>
+            <p>Периметр = {{rectangle.perimeter}}</p>
+            <p>Диагональ = {{rectangle.diagonal}}</p>
+        </div>
+        
+</div>
+<div class="col-8">
+    <img src="data:image/png;base64,{{uri}}" alt="" id="img" >
+    <p>Сторона a  = {{rectangle.a}}</p>
+    <p>Сторона b = {{rectangle.b}}</p>
+
+    {% endif %}
+</div>
+</div>
+{% endblock%}
